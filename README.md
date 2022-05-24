@@ -1,8 +1,8 @@
-# Henntober-Portfolio
+# Henntober Art Portfolio
 
 ## About
 
-This project was created as a gallery/portfolio for helloitsrufio's (Ruth Reed) hobby artwork. 
+This project was created as a gallery/portfolio for helloitsrufio's (Ruth Reed) hobby artwork. This artwork is currently stored on her [Instagram page](https://www.instagram.com/henntober/) under the handle *henntober*, hence the repo name.
 
 Within Rufio's Twitch community, there is a currency of sorts called channel points. These are a way to reward viewers for their viewership. When viewers watch a stream and interact with it, they earn these points. Most Twitch streamers have 'redemptions' for these channel points, or a way to spend them. One of Rufio's redemptions is a custom henna-style postcard. 
 
