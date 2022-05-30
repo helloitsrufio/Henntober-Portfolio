@@ -66,13 +66,13 @@ h2 {
     letter-spacing: 20px;
     
 }
-
-.welcome {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
+.welcome, .work{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
 }
+/* Welcome Section */
 
 .welcome-subsection {
     display: flex;
@@ -125,4 +125,27 @@ a {
 
 img {
   max-width: 100%;
+}
+
+/* Mosaic section */
+
+.work{
+  display: flex;
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* height:100vh; */
+  justify-items: center;
+  grid-column-gap:1.2rem;
+}
+
+.grid-item {
+  height: 2rem;
+}
+
+.grid-item span {
+  font-size: xx-small;
 }
