@@ -155,26 +155,26 @@ img {
   position: relative;
   text-align: center;
   opacity:1;
-  color: rgb(255,255,255,0)
 }
 
-.grid-item:hover{
-  opacity: .5;
-  color: rgb(255,255,255,1)
-}
-
-.grid-item span {
+.grid-item > span {
   position: absolute;
   font-size: small;
   font-weight: bold;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display:none;
 }
 
-/* .grid-item span:hover {
+.grid-item:hover > span {
   opacity: 1;
-} */
+  display: inline;
+}
+
+.grid-item:hover > img {
+  opacity: .5;
+}
 
 .grid-item-large {
   grid-row: span 2;
