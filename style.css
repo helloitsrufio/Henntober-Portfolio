@@ -32,13 +32,15 @@
    /*******************************************/
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 3.5rem;
 }
 body {
   margin: 0;
   width: 100%;
-  background-color: #240c0c;
+background-color: #240c0c;
   color: white;
   font-family: "Montserrat", sans-serif;
+  background: linear-gradient(#D0784D, #60382E, #240C0C, #51483E );
 }
 
 a:hover {
@@ -71,6 +73,12 @@ h2 {
   letter-spacing: 20px;
   padding: 0 2rem;
 }
+
+/* .welcome{
+  /* background-color:  #D0784D; */
+  /* background-image: linear-gradient(#D0784D, #240c0c)
+} */ 
+
 .welcome,
 .work {
   display: flex;
@@ -83,7 +91,7 @@ h2 {
 .work,
 .about,
 .contact {
-  margin-top: 10rem;
+  padding-top: 9.5rem;
 }
 
 .welcome-subsection {
@@ -198,6 +206,10 @@ img {
   font-size: large;
 }
 
+/* .about {
+  height:50rem;
+} */
+
 .about-paragraph {
   text-align: center;
   margin-right: 2em;
@@ -212,6 +224,10 @@ img {
 }
 
 /* Contact Section */
+/* .contact{
+  background-image: linear-gradient(#240c0c,#424033);
+  height: 50rem;
+} */
 .contact-content {
   display: flex;
   flex-direction: column;
