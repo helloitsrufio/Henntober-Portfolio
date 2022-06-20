@@ -60,6 +60,19 @@ nav {
   z-index: 10;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #140000;
+  filter: drop-shadow(1px 3px 8px #000);
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
+
 h1 {
   margin: 0.2rem;
   font-size: 1.5rem;
