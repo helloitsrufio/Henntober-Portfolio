@@ -38,6 +38,10 @@ body {
   background-color: #240c0c;
 }
 
+.full-page-section {
+  height: 100vh;
+}
+
 a:hover {
   color: orange;
 }
