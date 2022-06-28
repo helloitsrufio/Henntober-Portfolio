@@ -8,11 +8,11 @@ Within Rufio's Twitch community, there is a currency of sorts called channel poi
 
 The problem that Rufio was running into, however, was a good way to show these postcards when viewers redeemed the postcard redemption. This project was created to solve that problem by allowing viewers easy access to all the potential postcards they could redeem via a gallery-style art portfolio.
 
-This project is being coded in public on [Rufio's Twitch channel](https://www.twitch.tv/helloitsrufio).
+This project was coded in public on [Rufio's Twitch channel](https://www.twitch.tv/helloitsrufio).
 
 ## Details of Application
 
-The site is a simple front-end application with no server-side code. It is made of a single html page.
+The site is a simple front-end application with no server-side code. It is made of a single HTML page.
 
 It includes the following sections:
 - **Welcome section**
