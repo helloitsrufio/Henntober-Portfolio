@@ -101,7 +101,6 @@ h2 {
 /* Welcome Section */
 
 .welcome,
-.work,
 .about,
 .contact {
   padding-top: 5.5rem;
@@ -163,13 +162,21 @@ img {
 
 /* Mosaic section */
 
-.work {
+.work-section {
   display: flex;
+  width: 100%;
 }
 
-.work h2 {
+.work-section h2 {
   position: sticky;
   top: 6rem;
+}
+
+#work-section h3 {
+  padding: 5.5rem 0rem 3rem 0rem;
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
 }
 
 .grid-container {
@@ -218,10 +225,6 @@ img {
   align-items: center;
   font-size: large;
 }
-
-/* .about {
-  height:50rem;
-} */
 
 .about-paragraph {
   text-align: center;
