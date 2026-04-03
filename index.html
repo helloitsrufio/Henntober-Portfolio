@@ -13,6 +13,26 @@
       rel="stylesheet"
     />
   </head>
+
+<!-- I added lol -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".grid-item img");
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    images.forEach(img => {
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      };
+    });
+    modal.onclick = function () {
+      modal.style.display = "none";
+    };
+  });
+</script>
+
   <body>
     <nav>
       <h1>henntober</h1>
@@ -338,6 +358,13 @@
         <a href="mailto:ruthreed.dev@gmail.com">email</a>
       </section>
     </section>
+
+<!-- I added lol -->
+<div id="image-modal">
+  <span id="close-btn">&times;</span>
+  <img id="modal-img" src="" alt="" />
+</div>
+
     <footer>&copy; Ruth Reed</footer>
   </body>
 </html>

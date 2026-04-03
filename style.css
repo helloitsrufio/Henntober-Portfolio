@@ -298,3 +298,34 @@ footer {
     font-size: xx-large;
   }
 }
+
+
+/* I added lol */
+
+#image-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 5%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+#modal-img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  cursor: pointer;
+}
