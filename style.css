@@ -38,6 +38,10 @@ body {
   background-color: #240c0c;
 }
 
+body.viewer-open {
+  overflow: hidden;
+}
+
 .full-page-section {
   height: 100vh;
 }
@@ -195,10 +199,15 @@ img {
   opacity: 1;
 }
 
+.grid-item > img {
+  cursor: pointer;
+}
+
 .grid-item > span {
   position: absolute;
   font-size: small;
   font-weight: bold;
+  pointer-events: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -265,6 +274,80 @@ footer {
   background-color: #140000;
   height: 3rem;
   padding-left: 4rem;
+}
+
+.image-viewer[hidden] {
+  display: none;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 0, 0, 0.95);
+  padding: 3rem 1rem 5rem;
+}
+
+.image-viewer img {
+  max-width: calc(100% - 5rem);
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#image-viewer-title {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90vw, 44rem);
+  text-align: center;
+  font-weight: 700;
+}
+
+.image-viewer-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.image-viewer-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.image-viewer-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 4rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.image-viewer-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.image-viewer-previous {
+  left: 1rem;
+}
+
+.image-viewer-next {
+  right: 1rem;
 }
 
 /* Media queries */
