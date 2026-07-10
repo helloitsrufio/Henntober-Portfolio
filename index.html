@@ -411,5 +411,135 @@
       </section>
     </section>
     <footer>&copy; Ruth Reed</footer>
+
+    <section
+      class="image-viewer"
+      id="image-viewer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="image-viewer-title"
+      hidden
+    >
+      <button
+        class="image-viewer-close"
+        type="button"
+        aria-label="Close image viewer"
+      >
+        &times;
+      </button>
+      <button
+        class="image-viewer-nav image-viewer-previous"
+        type="button"
+        aria-label="Previous image"
+      >
+        &lsaquo;
+      </button>
+      <img id="image-viewer-image" src="" alt="" />
+      <button
+        class="image-viewer-nav image-viewer-next"
+        type="button"
+        aria-label="Next image"
+      >
+        &rsaquo;
+      </button>
+      <p id="image-viewer-title"></p>
+    </section>
+
+    <script>
+      // Get references to the image viewer elements and the gallery images.
+      const imageViewer = document.querySelector("#image-viewer");
+      const imageViewerImage = document.querySelector("#image-viewer-image");
+      const imageViewerTitle = document.querySelector("#image-viewer-title");
+      const imageViewerClose = document.querySelector(".image-viewer-close");
+      const imageViewerPrevious = document.querySelector(
+        ".image-viewer-previous"
+      );
+      const imageViewerNext = document.querySelector(".image-viewer-next");
+      const galleryImages = Array.from(
+        document.querySelectorAll(".grid-item img")
+      );
+      
+      // Keep track of the currently displayed image index in the viewer.
+      let currentImageIndex = 0;
+
+      // Updates the fullscreen viewer with the image and title at the given index.
+      function showImage(index) {
+        // Wrap the index around if it's out of bounds.
+        currentImageIndex =
+          (index + galleryImages.length) % galleryImages.length;
+        const image = galleryImages[currentImageIndex];
+        const title =
+          image.closest(".grid-item").querySelector("span").textContent;
+
+        imageViewerImage.src = image.src;
+        imageViewerImage.alt = image.alt;
+        imageViewerTitle.textContent = title;
+      }
+
+      // Opens the fullscreen viewer and shows the selected gallery image.
+      function openImageViewer(index) {
+        showImage(index);
+        imageViewer.hidden = false;
+        document.body.classList.add("viewer-open");
+        imageViewerClose.focus();
+      }
+
+      // Hides the fullscreen viewer and clears the displayed image.
+      function closeImageViewer() {
+        imageViewer.hidden = true;
+        imageViewerImage.src = "";
+        document.body.classList.remove("viewer-open");
+      }
+
+      // Moves the fullscreen viewer to the previous gallery image.
+      function showPreviousImage() {
+        showImage(currentImageIndex - 1);
+      }
+
+      // Moves the fullscreen viewer to the next gallery image.
+      function showNextImage() {
+        showImage(currentImageIndex + 1);
+      }
+      
+      // Add click and keyboard event listeners to each gallery image to open the viewer.
+      galleryImages?.forEach((image, index) => {
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", `Open ${image.alt}`);
+
+        image.addEventListener("click", () => openImageViewer(index));
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openImageViewer(index);
+          }
+        });
+      });
+
+      // Add event listeners for the viewer controls and background click.
+      imageViewerClose.addEventListener("click", closeImageViewer);
+      imageViewerPrevious.addEventListener("click", showPreviousImage);
+      imageViewerNext.addEventListener("click", showNextImage);
+      imageViewer.addEventListener("click", (event) => {
+        if (event.target === imageViewer) {
+          closeImageViewer();
+        }
+      });
+
+      // Add keyboard navigation for the image viewer.
+      document.addEventListener("keydown", (event) => {
+        if (imageViewer.hidden) {
+          return;
+        }
+
+        if (event.key === "Escape") {
+          closeImageViewer();
+        } else if (event.key === "ArrowLeft") {
+          showPreviousImage();
+        } else if (event.key === "ArrowRight") {
+          showNextImage();
+        }
+      });
+    </script>
   </body>
 </html>
